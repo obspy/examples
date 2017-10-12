@@ -1,0 +1,28 @@
+The recording setup for data in step_table_galperin_and_xyz.mseed is:
+
+- two Trillium Compact 120s on a step table
+- first Trillium oriented towards North and recording original Galperin
+  components UVW (thus U is due East)
+- second Trillium is rotated 25 degrees counter-clockwise from North (thus X is
+  at azimuth (90-25 = 65 degrees)
+
+So for use in obspy.signal.rotate.rotate2zne the following azimuth and dip
+setup should be used:
+
+az_u = 90.0
+dip_u = -(90.0 - 54.7)
+ 
+az_v = 330.0
+dip_v = -(90.0 - 54.7)
+
+az_w = 210.0
+dip_w = -(90.0 - 54.7)
+ 
+az_x = 65.0
+dip_x = 0.0
+ 
+az_y = 335.0
+dip_y = 0.0
+
+az_z = 0.0
+dip_z = -90.0
